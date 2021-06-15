@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Blue Star | {% block title %}{% endblock %} </title>
+    <link rel="icon" href="static\images\logos\Bordered Favicon Project Blue Star 3.ico">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='styles.css')}} " rel="stylesheet">
+
+    {% block page_javascript %}{% endblock %}
+
+</head>
+<body>
+    <div class="navbar">
+        <header class=navbar_header> 
+            <div class="navbar_logo">
+                <img src="static\images\logos\TR Project Blue Star 3.png" id=navbar_logo_image>
+                <a href="#" id="navbar_logo_text">Project Blue Star</a>
+            </div>
+            <input type="checkbox" id="nav_toggle" class="nav_toggle"> 
+            <nav class="navbar_nav">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <label for="nav_toggle" class="nav_toggle_label">
+                <span></span>
+            </label>
+        </header>
+    </div>
+
+    <div class="main_content">
+        {% block main %}{% endblock %}
+    </div>
+
+    <footer class="footer"> 
+        Footer: Project Blue Star | "Connecting the Minds of Students and Seniors"
+    </footer>
+</body>
+</html>
