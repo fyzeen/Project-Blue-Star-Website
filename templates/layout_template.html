@@ -13,8 +13,6 @@
 
     <link href="{{ url_for('static', filename='styles.css')}} " rel="stylesheet">
 
-    {% block page_javascript %}{% endblock %}
-
 </head>
 <body>
     <div class="navbar">
@@ -56,5 +54,7 @@
             <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
         </ul>
     </footer>
+
+    {% block page_javascript %}{% endblock %}
 </body>
 </html>
