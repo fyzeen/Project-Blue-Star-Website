@@ -13,13 +13,17 @@
 *::after {
   box-sizing: border-box;
   font-family: "Merriweather", serif;
-}
-
-body {
   margin: 0;
+  padding: 0;
 }
 
-/* Navbar styles */
+/* --- START NAVBAR STYLES --- */
+
+.navbar_header {
+  border-bottom: solid 2px var(--gray);
+  position: fixed;
+  top: 0;
+}
 
 .navbar_logo {
   font-size: 30px;
@@ -71,7 +75,7 @@ nav ul {
 }
 
 nav li {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   /* margin-left: 1em; */
   margin-left: 0;
 }
@@ -80,15 +84,12 @@ nav a {
   color: var(--gray);
   text-decoration: none;
   font-size: 1.2em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   opacity: 0;
   transition: opacity 0.15s ease-in-out;
 }
 
-nav a:hover {
-  color: var(--lightblue);
-  transition: color 0.4s ease-out;
-}
+/* Menu icon animations */
 
 .nav_toggle:checked ~ nav {
   transform: scale(1, 1);
@@ -97,6 +98,15 @@ nav a:hover {
 .nav_toggle:checked ~ nav a {
   opacity: 1;
   transition: opacity 0.2s ease-in-out 0.2s;
+}
+
+.nav_toggle:checked ~ nav a:hover {
+  color: var(--lightblue);
+  transition: color 0.4s ease-out;
+}
+
+.navbar_nav {
+  border-bottom: solid 2px var(--gray);
 }
 
 .nav_toggle {
@@ -122,6 +132,7 @@ nav a:hover {
   width: 2em;
   border-radius: 2px;
   position: relative;
+  transition: transform 0.4s ease-in-out, opacity 0.3s linear;
 }
 
 .nav_toggle_label span::before,
@@ -131,15 +142,41 @@ nav a:hover {
 }
 
 .nav_toggle_label span::before {
-  bottom: 7px;
+  bottom: 6px;
 }
 .nav_toggle_label span::after {
-  top: 7px;
+  top: 6px;
 }
 
+.nav_toggle:checked ~ .nav_toggle_label span {
+  transform: rotate(45deg);
+}
+
+.nav_toggle:checked ~ .nav_toggle_label span::after {
+  transform: rotate(90deg) translate(-6px);
+}
+
+.nav_toggle:checked ~ .nav_toggle_label span::before {
+  opacity: 0;
+}
+
+.main_content {
+  margin-top: 100px;
+}
+
+/* Adjustments for larger screens */
+
 @media screen and (min-width: 1000px) {
+  .main_content {
+    margin-top: 102px;
+  }
+
   .nav_toggle_label {
     display: none;
+  }
+
+  .navbar_nav {
+    border: none;
   }
 
   .navbar_header {
@@ -172,6 +209,8 @@ nav a:hover {
     position: relative;
   }
 
+  /* Hover animations */
+
   nav a::before {
     content: "";
     display: block;
@@ -188,9 +227,20 @@ nav a:hover {
   nav a:hover::before {
     transform: scale(1, 1);
   }
+
+  nav a:hover {
+    color: var(--lightblue);
+    transition: color 0.4s ease-out;
+  }
 }
 
+/* Adjustments for smaller screens */
+
 @media screen and (max-width: 500px) {
+  .main_content {
+    margin-top: 82px;
+  }
+
   .navbar_logo {
     font-size: 26px;
     display: flex;
@@ -204,7 +254,11 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 383px) {
+  .main_content {
+    margin-top: 67px;
+  }
+
   .navbar_logo {
     font-size: 22px;
     display: flex;
@@ -216,4 +270,134 @@ nav a:hover {
   #navbar_logo_image {
     width: 65px;
   }
+
+  nav li {
+    font-size: 15px;
+  }
 }
+
+/* --- END NAVBAR STYLES --- */
+
+/* --- START FOOTER STYLES --- */
+
+.footer {
+  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+.footer_logo {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer_logo_image {
+  width: 80px;
+}
+
+.footer_logo a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer_slogan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-style: italic;
+  font-size: 18x;
+  overflow-wrap: anywhere;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+footer li a {
+  text-decoration: none;
+  color: var(--lightgray);
+  position: relative;
+  padding: 0 1em;
+}
+
+footer li a::before {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--lightblue);
+  position: absolute;
+  bottom: -0.5em;
+  left: 1em;
+  right: 1em;
+  transform: scale(0, 1);
+  transition: transform ease-in-out 0.4s;
+}
+
+footer li a:hover::before {
+  transform: scale(1, 1);
+}
+
+footer li a:hover {
+  color: var(--lightblue);
+  transition: color 0.4s ease-out;
+}
+
+@media screen and (max-width: 550px) {
+  .footer ul {
+    flex-direction: column;
+  }
+
+  .footer_list {
+    padding: 1em;
+  }
+
+  footer li {
+    all: unset;
+    padding-top: 1em;
+  }
+
+  #footer_li_home {
+    padding-top: 0;
+  }
+
+  .footer_slogan {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .footer_slogan {
+    padding: 0 4em;
+    padding-top: 3px;
+  }
+
+  .footer_logo {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+  }
+
+  #footer_logo_image {
+    width: 65px;
+  }
+}
+
+/* --- END FOOTER STYLES --- */
+
+/* --- START HOME STYLES */
+
+/* --- END HOME STYLES */
