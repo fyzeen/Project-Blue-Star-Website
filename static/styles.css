@@ -337,21 +337,21 @@ footer li a::before {
   content: "";
   display: block;
   height: 2px;
-  background: var(--lightblue);
+  background: var(--lightgray);
   position: absolute;
-  bottom: -0.5em;
+  bottom: -0.25em;
   left: 1em;
   right: 1em;
-  transform: scale(0, 1);
+  transform: scale(1, 1);
   transition: transform ease-in-out 0.4s;
 }
 
 footer li a:hover::before {
-  transform: scale(1, 1);
+  transform: scale(0, 1);
 }
 
 footer li a:hover {
-  color: var(--lightblue);
+  color: var(--white);
   transition: color 0.4s ease-out;
 }
 
@@ -401,3 +401,203 @@ footer li a:hover {
 /* --- START HOME STYLES */
 
 /* --- END HOME STYLES */
+
+/* --- START ABOUT US STYLES */
+
+.about_us_page {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+.about_us_page h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+.about_us_page p {
+  margin-bottom: 1em;
+}
+
+.about_text_center {
+  text-align: center;
+}
+
+.about_header {
+  border-bottom: solid 1px var(--gray);
+}
+
+.about_header h1 {
+  margin-bottom: 0;
+}
+
+.vision {
+  background-color: var(--gray);
+  border-bottom: solid 1px var(--gray);
+  color: var(--lightgray);
+}
+
+.goal {
+  background-color: var(--darkblue);
+  color: var(--lightgray);
+  border-bottom: solid 1px var(--gray);
+}
+
+.sample_day {
+  border-bottom: solid 1px var(--gray);
+}
+
+.our_name {
+  background-color: var(--lightgray);
+  border-bottom: solid 1px var(--gray);
+}
+
+.who_we_are {
+  border-bottom: solid 1px var(--gray);
+}
+
+.our_team {
+  background-color: var(--darkblue);
+  color: var(--lightgray);
+}
+
+.vision h2,
+.goal h2,
+.our_team h2 {
+  color: var(--white);
+}
+.about_us_page section {
+  padding: 3rem 0;
+}
+
+.about_us_page .container {
+  margin-inline: auto;
+  width: min(90%, 75rem);
+}
+
+.about_us_page img {
+  max-width: 100%;
+}
+
+.team_person h2,
+h4 {
+  margin-bottom: 0.25em;
+}
+
+.team_person img {
+  margin-bottom: 1em;
+}
+
+.why_we_do_link a {
+  text-decoration: none;
+  color: var(--lightgray);
+  border: solid 2px var(--gray);
+  padding: 1rem;
+  background-color: var(--gray);
+  transition: background-color 0.4s ease-out;
+  align-self: center;
+}
+
+.why_we_do_link a:hover {
+  background-color: var(--lightblue);
+  color: var(--gray);
+}
+
+.about_us_page .split {
+  display: flex;
+  flex-direction: column;
+}
+
+.who_we_are img {
+  max-height: 470px;
+}
+
+.goal_col_2 p {
+  margin-bottom: 2em;
+}
+
+.who_we_are .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.team_person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team_person h4 {
+  padding-bottom: 1em;
+}
+
+@media (min-width: 740px) {
+  .about_us_page .split {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about_us_page .split > * {
+    flex-basis: 100%;
+  }
+
+  .about_us_page .split > * + * {
+    margin-left: 2em;
+  }
+
+  .about_us_page section {
+    padding: 4rem 0;
+  }
+
+  .goal .split {
+    align-items: normal;
+  }
+
+  .sample_day .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sample_schedule {
+    width: min(100%, 875px);
+  }
+}
+
+@media (max-width: 740px) {
+  .our_name_image {
+    margin-bottom: 2em;
+  }
+
+  .about_us_page h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+  }
+
+  .why_we_do_link {
+    text-align: center;
+  }
+}
+
+/* --- END ABOUT US STYLES */
+
+/* --- START OUR MISSION STYLES */
+
+/* --- END OUR MISSION STYLES */
+
+/* --- START GALLERY STYLES */
+
+/* --- END GALLERY STYLES */
+
+/* --- START CONTACT STYLES */
+
+/* --- END CONTACT STYLES */

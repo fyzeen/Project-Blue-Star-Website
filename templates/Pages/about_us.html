@@ -2,8 +2,108 @@
 
 
 {% block main %}
-
-About Us
+<div class="about_us_page">
+    <section class="about_header about_text_center">
+        <div class="container">
+            <h1 class="about_header_text">&#8212 About Us &#8212</h1>
+        </div>
+    </section>
+    
+    <section class="vision">
+        <div class="container">
+            <div class="split">
+                <div>
+                    <h2>Our Vision</h2>
+                    <p>Project Blue Star seeks to improve the lives of seniors in Central Minnesota. This includes all aspects of a healthy life (physical, mental and emotional). We believe that our work can make a lasting impact on the most vulnerable members of our community.</p>
+                </div>
+                <div>
+                    <img src="static\images\photos\Unsplash Lady On Right.jpg" alt="lady sitting in front of shrubs looking at camera">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="goal">
+        <div class="container">
+            <h2 class="about_text_center">Our Goal</h2>
+            <div class="split">
+                <div>
+                    <p>Our goal as high school students running Project Blue Star is to interact with senior citizens by holding sessions in various senior homes where residents have the opportunity to participate in mentally engaging activities alongside student volunteers.</p>
+                </div>
+                <div class="goal_col_2">
+                    <p>During these sessions, we emphasize interaction between students and seniors, who often become isolated and lonely in assisted living environments.</p>
+                    <div class="why_we_do_link">
+                        <a href="{{ url_for('our_mission') }}">Learn More &#8594</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sample_day">
+        <div class="container">
+            <h2 class="about_text_center">Sample Day</h2>
+            <img src="static\images\photos\PBS Sample Day.png" alt="sample day schedule" class="sample_schedule">
+        </div>
+    </section>
+    
+    <section class="our_name">
+        <div class="container">
+            <!-- Pictures MUST be cropped to 750 x 999 before deploying to website -->
+            <div class="split">
+                <div class="our_name_logo_div">
+                    <img src="static\images\logos\Cropped Outer TR Project Blue Star 3.png" alt="project blue star logo" class="our_name_image">
+                </div>
+                <div>
+                    <h2>Our Name</h2>
+                    <p>The Blue Star Lotus, the national flower of Bangladesh, is a symbol of rebirth &#8212 a connection between young and old. Given our mission to connect students and seniors, it only fit to name our organization after this symbolic flower.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="who_we_are">
+        <div class="container">
+            <div class="split">
+                <div>
+                    <h2>Who We Are</h2>
+                    <p>This organization was founded by and is run by National Honors Society members at Technical High School in St. Cloud. The entire organization is based on the NHS values of service, volunteerism, and character.</p>
+                </div>
+                <div>
+                    <img src="static\images\photos\NHS Logo.jpg" alt="NHS logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="our_team">
+        <div class="container">
+            <h2 class="about_text_center">Our Leadership Team</h2>
+            <div class="team_person">
+                <div class="split">
+                    <div>
+                        <img src="static\images\photos\Profile Picture Holder.png">
+                    </div>
+                    <div>
+                        <h2>Name</h2>
+                        <h4>Position</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="team_person">
+                <div class="split">
+                    <div>
+                        <img src="static\images\photos\Profile Picture Holder.png">
+                    </div>
+                    <div>
+                        <h2>Name</h2>
+                        <h4>Position</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 {% endblock %}
 
