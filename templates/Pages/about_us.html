@@ -25,15 +25,15 @@
     
     <section class="goal">
         <div class="container">
-            <h2 class="about_text_center">Our Goal</h2>
+            <h2 class="about_text_center down_in_place">Our Goal</h2>
             <div class="split">
                 <div>
-                    <p>Our goal as high school students running Project Blue Star is to interact with senior citizens by holding sessions in various senior homes where residents have the opportunity to participate in mentally engaging activities alongside student volunteers.</p>
+                    <p>As high school students, our goal is to engage with senior citizens by holding sessions in various senior homes. At these sessions, residents have the opportunity to participate in mentally engaging activities alongside student volunteers.</p>
                 </div>
                 <div class="goal_col_2">
-                    <p>During these sessions, we emphasize interaction between students and seniors, who often become isolated and lonely in assisted living environments.</p>
+                    <p>We emphasize interaction between students and seniors, who often become isolated and lonely in assisted living environments.</p>
                     <div class="why_we_do_link">
-                        <a href="{{ url_for('our_mission') }}">Learn More &#8594</a>
+                        <a href="{{ url_for('our_mission') }}" class="fade_in">Learn More &#8594</a>
                     </div>
                 </div>
             </div>
@@ -42,21 +42,20 @@
     
     <section class="sample_day">
         <div class="container">
-            <h2 class="about_text_center">Sample Day</h2>
+            <h2 class="about_text_center down_in_place">Sample Day</h2>
             <img src="static\images\photos\PBS Sample Day.png" alt="sample day schedule" class="sample_schedule">
         </div>
     </section>
     
     <section class="our_name">
         <div class="container">
-            <!-- Pictures MUST be cropped to 750 x 999 before deploying to website -->
             <div class="split">
                 <div class="our_name_logo_div">
-                    <img src="static\images\logos\Cropped Outer TR Project Blue Star 3.png" alt="project blue star logo" class="our_name_image">
+                    <img src="static\images\logos\Cropped Outer TR Project Blue Star 3.png" alt="project blue star logo" class="our_name_image side_in_place">
                 </div>
                 <div>
-                    <h2>Our Name</h2>
-                    <p>The Blue Star Lotus, the national flower of Bangladesh, is a symbol of rebirth &#8212 a connection between young and old. Given our mission to connect students and seniors, it only fit to name our organization after this symbolic flower.</p>
+                    <h2 class="down_in_place">Our Name</h2>
+                    <p>The Blue Star Lotus is a symbol of rebirth &#8212 a connection between young and old. Given our mission to connect students and seniors, it only fit to name our organization after this symbolic flower.</p>
                 </div>
             </div>
         </div>
@@ -66,11 +65,11 @@
         <div class="container">
             <div class="split">
                 <div>
-                    <h2>Who We Are</h2>
-                    <p>This organization was founded by and is run by National Honors Society members at Technical High School in St. Cloud. The entire organization is based on the NHS values of service, volunteerism, and character.</p>
+                    <h2 class="down_in_place">Who We Are</h2>
+                    <p">This organization was founded by and is run by National Honor Society members at Technical High School in St. Cloud. The entire organization is based on the NHS values of service, volunteerism, and character.</p>
                 </div>
-                <div>
-                    <img src="static\images\photos\NHS Logo.jpg" alt="NHS logo">
+                <div class="nhs_logo_div">
+                    <img src="static\images\photos\NHS Logo.jpg" alt="NHS logo" class="side_in_place">
                 </div>
             </div>
         </div>
@@ -78,24 +77,25 @@
     
     <section class="our_team">
         <div class="container">
-            <h2 class="about_text_center">Our Leadership Team</h2>
+            <h2 class="about_text_center down_in_place">Our Leadership Team</h2>
+            <!-- Pictures MUST be cropped to 750 x 999 before deploying to website -->
             <div class="team_person">
-                <div class="split">
-                    <div>
+                <div class="team_person_split">
+                    <div class="team_person_img_div">
                         <img src="static\images\photos\Profile Picture Holder.png">
                     </div>
-                    <div>
-                        <h2>Name</h2>
+                    <div class="fade_in">
+                        <h2>Fyzeen Ahmad</h2>
                         <h4>Position</h4>
                     </div>
                 </div>
             </div>
             <div class="team_person">
-                <div class="split">
-                    <div>
+                <div class="team_person_split">
+                    <div class="team_person_img_div">
                         <img src="static\images\photos\Profile Picture Holder.png">
                     </div>
-                    <div>
+                    <div class="fade_in">
                         <h2>Name</h2>
                         <h4>Position</h4>
                     </div>
@@ -108,4 +108,7 @@
 {% endblock %}
 
 {% block page_javascript %}
+
+<script src="static\JavaScript\about_us.js"></script>
+
 {% endblock %}

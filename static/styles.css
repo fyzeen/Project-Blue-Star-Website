@@ -43,7 +43,7 @@
 }
 
 .navbar_logo a:hover {
-  color: var(--lightblue);
+  color: var(--darkblue);
   transition: color 0.4s ease-out;
 }
 
@@ -215,9 +215,9 @@ nav a {
     content: "";
     display: block;
     height: 3px;
-    background: var(--lightblue);
+    background: var(--darkblue);
     position: absolute;
-    bottom: -0.5em;
+    bottom: -0.25em;
     left: 0;
     right: 0;
     transform: scale(0, 1);
@@ -229,7 +229,7 @@ nav a {
   }
 
   nav a:hover {
-    color: var(--lightblue);
+    color: var(--darkblue);
     transition: color 0.4s ease-out;
   }
 }
@@ -408,12 +408,18 @@ footer li a:hover {
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--gray);
+  overflow-x: hidden;
+}
+
+.about_us_page img {
+  max-width: 100%;
+  display: block;
 }
 
 .about_us_page h1,
-h2,
-h3,
-h4 {
+.about_us_page h2,
+.about_us_page h3,
+.about_us_page h4 {
   line-height: 1;
   font-weight: normal;
   margin-bottom: 1em;
@@ -433,12 +439,28 @@ h4 {
 
 .about_header h1 {
   margin-bottom: 0;
+  animation-name: about_fade_in_on_load;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 .vision {
   background-color: var(--gray);
   border-bottom: solid 1px var(--gray);
   color: var(--lightgray);
+  opacity: 0;
+  animation-name: about_fade_in_on_load;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes about_fade_in_on_load {
+  100% {
+    opacity: 1;
+  }
 }
 
 .goal {
@@ -463,6 +485,7 @@ h4 {
 .our_team {
   background-color: var(--darkblue);
   color: var(--lightgray);
+  display: flex;
 }
 
 .vision h2,
@@ -479,13 +502,14 @@ h4 {
   width: min(90%, 75rem);
 }
 
-.about_us_page img {
-  max-width: 100%;
+.team_person h2 {
+  margin-bottom: 0.25em;
+  text-align: center;
 }
 
-.team_person h2,
-h4 {
-  margin-bottom: 0.25em;
+.team_person h4 {
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 .team_person img {
@@ -498,12 +522,12 @@ h4 {
   border: solid 2px var(--gray);
   padding: 1rem;
   background-color: var(--gray);
-  transition: background-color 0.4s ease-out;
   align-self: center;
 }
 
 .why_we_do_link a:hover {
   background-color: var(--lightblue);
+  transition: background-color 0.4s ease-out;
   color: var(--gray);
 }
 
@@ -528,13 +552,75 @@ h4 {
 }
 
 .team_person {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.team_person h4 {
-  padding-bottom: 1em;
+.team_person_split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade_in {
+  opacity: 0;
+}
+
+.fade_in.in_screen {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.down_in_place {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.down_in_place.in_screen {
+  animation: animate_down_h2 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate_down_h2 {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.our_name_logo_div .side_in_place {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.our_name_logo_div .side_in_place.in_screen {
+  animation: image_animate_from_left 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes image_animate_from_left {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nhs_logo_div .side_in_place {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.nhs_logo_div .side_in_place.in_screen {
+  animation: image_animate_from_right 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes image_animate_from_right {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (min-width: 740px) {
@@ -569,6 +655,16 @@ h4 {
   .sample_schedule {
     width: min(100%, 875px);
   }
+
+  .team_person_split {
+    display: grid;
+    grid-template-columns: 15% 35% 35% 15%;
+    justify-content: unset;
+  }
+
+  .team_person_img_div {
+    grid-column: 2 / 3;
+  }
 }
 
 @media (max-width: 740px) {
@@ -596,8 +692,157 @@ h4 {
 
 /* --- START GALLERY STYLES */
 
+.image_gallery_page h1,
+.image_gallery_page h3 {
+  font-weight: normal;
+  animation-name: about_fade_in_on_load;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  padding: 0 1em;
+  color: var(--gray);
+}
+
+.image_gallery_page h1 {
+  padding-bottom: 0.5em;
+}
+
+.image_gallery_welcome_text {
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: solid 1px var(--gray);
+}
+
+.gallery_images {
+  line-height: 0;
+  column-count: 5;
+  column-gap: 5px;
+  width: 100%;
+  justify-self: center;
+}
+
+.gallery_images img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 1001px) {
+  .gallery_images {
+    column-count: 4;
+  }
+}
+@media (max-width: 1000px) {
+  .gallery_images {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery_images {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery_images {
+    column-count: 1;
+  }
+}
+
 /* --- END GALLERY STYLES */
 
 /* --- START CONTACT STYLES */
+
+.contact_us_page {
+  animation-name: about_fade_in_on_load;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  padding: 0 1em;
+  color: var(--gray);
+}
+
+.contact_header {
+  padding: 3rem;
+  text-align: center;
+  border-bottom: solid 1px var(--gray);
+}
+
+.contact_header_text {
+  font-weight: normal;
+  font-size: 28.8px;
+}
+
+.contact_header_h3 {
+  padding-top: 1em;
+  font-weight: normal;
+  margin: 0 3rem;
+  line-height: 1.6;
+}
+
+.nhs_social_contact h3 {
+  font-weight: normal;
+  font-size: 20px;
+  padding: 1em;
+  text-align: center;
+}
+
+.email_contact_div {
+  display: grid;
+  grid-template-columns: 30% 20% 20% 30%;
+  padding: 1em;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.email_contact_div img {
+  width: 50px;
+  grid-column: 2 / 3;
+}
+
+.social_contact_div {
+  display: grid;
+  grid-template-columns: 30% 20% 20% 30%;
+  padding: 1em;
+  align-items: center;
+}
+
+.twitter_text_link,
+.instagram_text_link {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.twitter_text_link:hover,
+.instagram_text_link:hover {
+  color: var(--darkblue);
+  transition: color 0.4s ease-out;
+}
+
+.social_contact_div a {
+  grid-column: 2 / 3;
+}
+
+.social_contact_div img {
+  width: 50px;
+}
+
+.twitter_img {
+  border: solid 1px var(--gray);
+}
+
+@media (max-width: 760px) {
+  .contact_header_h3 {
+    margin: 0 0;
+  }
+
+  .email_contact_div {
+    grid-template-columns: auto auto auto auto;
+  }
+}
 
 /* --- END CONTACT STYLES */
