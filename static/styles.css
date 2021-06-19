@@ -400,6 +400,219 @@ footer li a:hover {
 
 /* --- START HOME STYLES */
 
+.home_page_div {
+  line-height: 1.5;
+  color: var(--lightgray);
+  font-size: 1.25rem;
+}
+
+.home_page_div h1,
+.home_page_div h2,
+.home_page_div h4 {
+  font-weight: normal;
+  line-height: 1;
+}
+
+.home_main_btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 1em;
+  letter-spacing: 1px;
+  color: var(--lightgray);
+  text-decoration: none;
+  margin-bottom: 1em;
+  transition: background-color 0.5s ease-out;
+  animation-name: contact_slide_up_on_load;
+  opacity: 0;
+  transform: translateY(50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.under_home_title {
+  margin-bottom: 2em;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: rgba(54, 54, 54, 0.75);
+  animation-name: contact_slide_up_on_load;
+  opacity: 0;
+  transform: translateY(50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.btn_filled {
+  background-color: var(--darkblue);
+  border: solid 2px var(--darkblue);
+}
+
+.home_main_btn:hover {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.btn_outline {
+  border: solid 2px var(--darkblue);
+  background-color: rgba(54, 54, 54, 0.5);
+}
+
+.home_page_facts {
+  background-color: var(--darkblue);
+  color: var(--lightgray);
+}
+
+.home_page_main {
+  padding: 3em 1em;
+  background-image: url(../static/images/photos/Unsplash_Lady_On_Right.jpg);
+  background-size: cover;
+  text-align: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.home_title {
+  font-size: 3rem;
+  background-color: rgba(0, 105, 158, 0.75);
+  padding: 0.25em;
+  animation-name: home_slide_down_on_load;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes home_slide_down_on_load {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.home_page_facts {
+  text-align: center;
+  line-height: 1.5;
+  font-weight: normal;
+  padding: 1rem;
+}
+
+.facts_learn_more_link {
+  border: solid 2px var(--gray);
+  background-color: var(--gray);
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 1em;
+  letter-spacing: 1px;
+  color: var(--lightgray);
+  text-decoration: none;
+  margin-bottom: 1em;
+  transition: background-color 0.5s ease-out;
+  opacity: 0;
+}
+
+.facts_learn_more_link:hover {
+  background-color: var(--lightblue);
+  color: var(--gray);
+}
+
+.facts_learn_more_link.in_screen {
+  animation: home_fade_in 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes home_fade_in {
+  100% {
+    opacity: 1;
+  }
+}
+
+.card {
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.4s;
+  background-color: var(--gray);
+}
+
+.card:hover {
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.6);
+}
+
+.featured_fact {
+  margin: 1em;
+  width: 75%;
+  padding: 1em;
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+.featured_fact a {
+  color: var(--lightgray);
+  text-decoration: underline;
+}
+
+.featured_fact.in_screen {
+  animation: contact_slide_up_on_load 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.facts_split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.figure {
+  font-size: 65px;
+  padding-bottom: 0.5em;
+}
+
+.facts_ender {
+  padding: 1em;
+}
+
+.facts_title {
+  font-size: 35px;
+  padding: 0.5em;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.facts_title.in_screen {
+  animation: animate_down_h2 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@media (min-width: 470px) {
+  .home_page_main {
+    display: grid;
+    justify-items: start;
+    text-align: unset;
+    grid-template-columns: 0 minmax(20rem, 35rem) minmax(1em, 1fr);
+  }
+
+  .home_page_main > * {
+    grid-column: 2 / 3;
+  }
+}
+
+@media (min-width: 960px) {
+  .facts_split {
+    flex-direction: row;
+  }
+
+  .facts_split .featured_fact {
+    height: 320px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .home_page_main {
+    background-position: center right;
+  }
+}
+
 /* --- END HOME STYLES */
 
 /* --- START ABOUT US STYLES */
@@ -439,9 +652,10 @@ footer li a:hover {
 
 .about_header h1 {
   margin-bottom: 0;
-  animation-name: about_fade_in_on_load;
+  animation-name: contact_slide_up_on_load;
   opacity: 0;
-  animation-duration: 2s;
+  transform: translateY(50%);
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
@@ -591,7 +805,7 @@ footer li a:hover {
 
 .our_name_logo_div .side_in_place {
   opacity: 0;
-  transform: translateX(-50%);
+  transform: translateX(-25%);
 }
 
 .our_name_logo_div .side_in_place.in_screen {
@@ -608,7 +822,7 @@ footer li a:hover {
 
 .nhs_logo_div .side_in_place {
   opacity: 0;
-  transform: translateX(50%);
+  transform: translateX(25%);
 }
 
 .nhs_logo_div .side_in_place.in_screen {
@@ -695,9 +909,10 @@ footer li a:hover {
 .image_gallery_page h1,
 .image_gallery_page h3 {
   font-weight: normal;
-  animation-name: about_fade_in_on_load;
+  animation-name: contact_slide_up_on_load;
   opacity: 0;
-  animation-duration: 2s;
+  transform: translateY(40%);
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
   padding: 0 1em;
@@ -756,19 +971,38 @@ footer li a:hover {
 /* --- START CONTACT STYLES */
 
 .contact_us_page {
-  animation-name: about_fade_in_on_load;
-  opacity: 0;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
   padding: 0 1em;
   color: var(--gray);
 }
 
+.rest_of_contact_page {
+  animation-name: about_fade_in_on_load;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
 .contact_header {
-  padding: 3rem;
+  padding: 3rem 1em;
   text-align: center;
   border-bottom: solid 1px var(--gray);
+}
+
+.contact_header h1,
+.contact_header h3 {
+  animation-name: contact_slide_up_on_load;
+  opacity: 0;
+  transform: translateY(40%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes contact_slide_up_on_load {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .contact_header_text {
@@ -785,7 +1019,6 @@ footer li a:hover {
 
 .nhs_social_contact h3 {
   font-weight: normal;
-  font-size: 20px;
   padding: 1em;
   text-align: center;
 }
@@ -812,15 +1045,15 @@ footer li a:hover {
 
 .twitter_text_link,
 .instagram_text_link {
-  font-size: 20px;
-  text-decoration: none;
+  font-size: 19px;
+  text-decoration: underline;
   color: var(--gray);
 }
 
 .twitter_text_link:hover,
 .instagram_text_link:hover {
   color: var(--darkblue);
-  transition: color 0.4s ease-out;
+  transition: color 0.5s ease-out;
 }
 
 .social_contact_div a {
@@ -829,10 +1062,6 @@ footer li a:hover {
 
 .social_contact_div img {
   width: 50px;
-}
-
-.twitter_img {
-  border: solid 1px var(--gray);
 }
 
 @media (max-width: 760px) {

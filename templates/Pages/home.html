@@ -1,12 +1,49 @@
 {% extends "layout_template.html" %}
 
 {% block main %}
-
-Home Page
-
-<!-- "We are an organization powered by students seeking to engage senior citizens in our community" -->
+ 
+<div class="home_page_div">
+    <section class="home_page_main">
+        <h1 class="home_title">Welcome to Project Blue Star</h1>
+        <p class="under_home_title">We are high school students seeking to engage senior citizens in our community. </p>
+        <a href="{{ url_for ('about_us') }}" class="home_main_btn btn_filled">About Us</a>
+        <a href="{{ url_for ('contact_us') }}" class="home_main_btn btn_outline">Get In Touch</a>
+    </section>
+    <section class="home_page_facts">
+        <div class="facts_container">
+            <h2 class="facts_title home_slide_in">Did you know...</h2>
+            <div class="facts_split">
+                <div class="featured_fact card home_slide_in">
+                    <div class="inside_fact_card">
+                        <h1 class="figure">56%</h1>
+                        <p class="fact_details">of older adults report feeling isolated (<a href="https://deepblue.lib.umich.edu/bitstream/handle/2027.42/162549/0212_NPHA-loneliness-report-FINAL-09112020-handle.pdf?sequence=5&isAllowed=y">University of Michigan</a>).</p>
+                    </div inside_fact_card>
+                </div>
+                <div class="featured_fact card home_slide_in">
+                    <div class="inside_fact_card">
+                        <h1 class="figure">1 in 6</h1>
+                        <p class="fact_details">adults over 60 have faced neglect or abuse (<a href="https://www.who.int/news-room/fact-sheets/detail/elder-abuse">WHO</a>).</p>
+                    </div inside_fact_card>
+                </div>
+                <div class="featured_fact card home_slide_in">
+                    <div class="inside_fact_card">
+                        <h1 class="figure">50%+</h1>
+                        <p class="fact_details">increased risk of dementia, depression, and anxiety when the elderly are isolated (<a href="https://www.cdc.gov/aging/publications/features/lonely-older-adults.html">National Academies of Sciences</a>).</p>
+                    </div inside_fact_card>
+                </div>
+            </div>
+            <div class="facts_ender_div">
+                <h4 class="facts_ender">At Project Blue Star, we seek to combat senior neglect, abuse, and isolation.</h4>
+                <a href="{{ url_for ('our_mission') }}" class="facts_learn_more_link home_slide_in">Learn More &#8594</a>
+            </div>
+        </div>
+    </section>
+</div>
 
 {% endblock %}
 
 {% block page_javascript %}
+
+<script src="static\JavaScript\home.js"></script>
+
 {% endblock %}
