@@ -572,6 +572,10 @@ footer li a:hover {
   padding: 1em;
 }
 
+.facts_ender_div h4 {
+  line-height: 1.5;
+}
+
 .facts_title {
   font-size: 35px;
   padding: 0.5em;
