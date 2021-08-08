@@ -455,7 +455,7 @@ footer li a:hover {
 
 .btn_outline {
   border: solid 2px var(--darkblue);
-  background-color: rgba(54, 54, 54, 0.5);
+  background-color: rgba(54, 54, 54, 0.85);
 }
 
 .home_page_facts {
@@ -465,7 +465,7 @@ footer li a:hover {
 
 .home_page_main {
   padding: 3em 1em;
-  background-image: url(../static/images/photos/Unsplash_Lady_On_Right.jpg);
+  background-image: url(../static/images/photos/grandma_and_teen_reading.jpg);
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
@@ -473,7 +473,7 @@ footer li a:hover {
 
 .home_title {
   font-size: 3rem;
-  background-color: rgba(0, 105, 158, 0.75);
+  background-color: rgba(0, 105, 158, 0.85);
   padding: 0.25em;
   animation-name: home_slide_down_on_load;
   opacity: 0;
