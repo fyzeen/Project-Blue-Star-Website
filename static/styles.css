@@ -950,6 +950,7 @@ footer li a:hover {
 
 .image_gallery_welcome_text {
   padding: 3rem 0;
+  margin-bottom: 5px;
   text-align: center;
   border-bottom: solid 1px var(--gray);
 }
@@ -973,6 +974,7 @@ footer li a:hover {
     column-count: 4;
   }
 }
+
 @media (max-width: 1000px) {
   .gallery_images {
     column-count: 3;
