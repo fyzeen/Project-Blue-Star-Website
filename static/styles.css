@@ -463,6 +463,11 @@ footer li a:hover {
   color: var(--lightgray);
 }
 
+#sounds_of_sunday_vid {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
 .home_page_main {
   padding: 3em 1em;
   background-image: url(../static/images/photos/grandma_and_teen_reading.jpg);
@@ -490,11 +495,29 @@ footer li a:hover {
   }
 }
 
+@media (max-width: 860px) {
+  .iframe_container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+
+  .iframe_container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .home_page_facts {
   text-align: center;
   line-height: 1.5;
   font-weight: normal;
   padding: 1rem;
+  border-bottom: solid 1px var(--gray);
 }
 
 .facts_learn_more_link {
