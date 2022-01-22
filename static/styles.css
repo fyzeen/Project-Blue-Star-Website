@@ -943,10 +943,22 @@ footer li a:hover {
   padding-bottom: 2em;
 }
 
+.error_container {
+  align-content: center;
+  padding: 2em;
+  margin: 1em;
+  background-color: var(--lightblue);
+  font-size: 1.5em;
+}
+
 @media (max-width: 700px) {
   .medium_widget_class {
     padding-left: 0%;
     padding-right: 0%;
+  }
+
+  .error_container {
+    font-size: 1em;
   }
 }
 
