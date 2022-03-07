@@ -512,6 +512,14 @@ footer li a:hover {
   }
 }
 
+.stc_article {
+  background-color: var(--white);
+  border-bottom: solid 1px var(--gray);
+  color: var(--gray);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 .home_page_facts {
   text-align: center;
   line-height: 1.5;
@@ -937,29 +945,36 @@ footer li a:hover {
   padding-left: 1em;
 }
 
-.medium_widget_class {
-  padding-left: 15%;
-  padding-right: 15%;
-  padding-bottom: 2em;
-}
-
 .error_container {
   align-content: center;
-  text-align: center;
-  padding: 2em;
+  padding: 1em;
   margin: 1em;
-  background-color: var(--lightblue);
-  font-size: 2em;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.article_widget {
+  width: 75%;
+  height: 75%;
+  border: 2px solid var(--gray);
+}
+
+.article_widget:hover {
+  border: 8px solid var(--lightblue);
+  transition: border 0.15s ease-in;
 }
 
 @media (max-width: 700px) {
-  .medium_widget_class {
-    padding-left: 0%;
-    padding-right: 0%;
+  .error_container {
+    padding: 0.35em;
+    padding-bottom: 0.35em;
+    margin: 0.35em;
   }
 
-  .error_container {
-    font-size: 1.25em;
+  .article_widget {
+    width: 100%;
+    height: 100%;
   }
 }
 
