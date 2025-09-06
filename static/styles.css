@@ -1020,12 +1020,12 @@ footer li a:hover {
 }
 
 .error_container {
-  align-content: center;
+  display: flex;
+  justify-content: center;   /* Horizontally center */
+  align-items: center;       /* Vertically center */
   padding: 1em;
   margin: 1em;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  text-align: center;        /* Optional: for inline text */
 }
 
 .article_widget {
