@@ -22,6 +22,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
+    <!-- Announcement styles are scoped here; styles.css is unchanged. -->
+    <style>
+        #pbs-announcement {
+            box-sizing: border-box;
+            width: min(660px, calc(100% - 32px));
+            max-height: 85vh;
+            margin: auto;
+            padding: clamp(24px, 5vw, 40px);
+            border: 0;
+            border-radius: 14px;
+            background: #fff;
+            color: #243247;
+            box-shadow: 0 24px 80px rgb(0 0 0 / 25%);
+            font-family: 'Merriweather', Georgia, serif;
+            text-align: left;
+            overflow-y: auto;
+        }
+        #pbs-announcement::backdrop { background: rgb(15 23 42 / 65%); }
+        #pbs-announcement .pbs-eyebrow {
+            margin: 0 36px 12px 0;
+            color: #365d88;
+            font: 700 12px/1.5 Arial, sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        #pbs-announcement h2 {
+            margin: 0 20px 20px 0;
+            color: #153a63;
+            font-size: clamp(24px, 5vw, 32px);
+            line-height: 1.3;
+        }
+        #pbs-announcement p { margin: 0 0 16px; font-size: 15px; line-height: 1.7; }
+        #pbs-announcement .pbs-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #243247;
+            font: 28px/1 Arial, sans-serif;
+            cursor: pointer;
+        }
+        #pbs-announcement .pbs-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+        #pbs-announcement .pbs-actions a,
+        #pbs-announcement .pbs-actions button {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 12px 16px;
+            border: 1px solid #153a63;
+            border-radius: 7px;
+            font: 600 15px/1.5 Arial, sans-serif;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #pbs-announcement .pbs-actions a { background: #153a63; color: #fff; }
+        #pbs-announcement .pbs-actions button { background: #fff; color: #153a63; }
+        #pbs-announcement :focus-visible { outline: 3px solid #b36a00; outline-offset: 3px; }
+        @media (max-width: 480px) {
+            #pbs-announcement .pbs-actions > * { width: 100%; }
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -63,6 +129,50 @@
             <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
         </ul>
     </footer>
+
+    <dialog id="pbs-announcement" aria-labelledby="pbs-announcement-title">
+        <button type="button" class="pbs-close" aria-label="Close announcement" autofocus>&times;</button>
+        <p class="pbs-eyebrow">Our next chapter &middot; August 2026</p>
+        <h2 id="pbs-announcement-title">Project Blue Star has joined The Melody Project!</h2>
+        <p>As of August 2026, Project Blue Star has merged with <strong>The Melody Project</strong>, bringing our work into a broader national organization.</p>
+        <p><strong>Our programs will continue operating as they do today.</strong> Organizers and students should continue using their existing contacts, workflows, and schedules as they currently.</p>
+        <p>Project Blue Star's Managing Director, <strong>Fyzeen Ahmad</strong>, and Outreach Director, <strong>Andrew Toensing</strong>, will continue supporting this work as members of The Melody Project's Advisory Board.</p>
+        <p>We are grateful to have served the Minnesota community since 2021, and for the students, families, volunteers, donors, and community partners who have made this work possible. We look forward to continuing to serve our community in this next chapter.</p>
+        <div class="pbs-actions">
+            <a href="https://themelodyproject.org/">Visit The Melody Project</a>
+            <button type="button" class="pbs-continue">Continue to website</button>
+        </div>
+    </dialog>
+    <script>
+        (() => {
+            const announcement = document.getElementById('pbs-announcement');
+            let previousOverflow;
+
+            function showAnnouncement() {
+                if (announcement.open) return;
+                previousOverflow = document.documentElement.style.overflow;
+                announcement.showModal();
+                document.documentElement.style.overflow = 'hidden';
+            }
+
+            announcement.querySelectorAll('.pbs-close, .pbs-continue').forEach(button => {
+                button.addEventListener('click', () => announcement.close());
+            });
+            announcement.addEventListener('click', event => {
+                const bounds = announcement.getBoundingClientRect();
+                const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
+                    event.clientY < bounds.top || event.clientY > bounds.bottom;
+                if (event.target === announcement && outside) announcement.close();
+            });
+            announcement.addEventListener('close', () => {
+                document.documentElement.style.overflow = previousOverflow;
+            });
+
+            // No stored dismissal: show on every page, including back/forward visits.
+            window.addEventListener('pageshow', showAnnouncement);
+            showAnnouncement();
+        })();
+    </script>
 
     {% block page_javascript %}{% endblock %}
 </body>
